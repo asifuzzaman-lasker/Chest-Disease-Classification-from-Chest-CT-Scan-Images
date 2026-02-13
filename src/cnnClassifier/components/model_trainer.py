@@ -5,6 +5,8 @@ import tensorflow as tf
 import time
 from cnnClassifier.entity.config_entity import TrainingConfig
 from pathlib import Path
+import shutil
+
 
 class Training:
     def __init__(self, config: TrainingConfig):
@@ -65,8 +67,6 @@ class Training:
     def save_model(path: Path, model: tf.keras.Model):
         model.save(path)
 
-
-
     
     def train(self):
         self.steps_per_epoch = self.train_generator.samples // self.train_generator.batch_size
@@ -80,7 +80,22 @@ class Training:
             validation_data=self.valid_generator
         )
 
+
+        model_dir = Path("model")
+        model_dir.mkdir(parents=True, exist_ok=True)
+
+        model_path = model_dir / "model.h5"
+
         self.save_model(
             path=self.config.trained_model_path,
             model=self.model
+        )
+
+        model_dir = Path("model")
+        model_dir.mkdir(parents=True, exist_ok=True)
+
+
+        shutil.copy(
+            self.config.trained_model_path,
+            model_dir / "model.h5"
         )
