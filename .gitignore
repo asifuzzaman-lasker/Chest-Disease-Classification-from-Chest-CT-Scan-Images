@@ -208,3 +208,10 @@ __marimo__/
 
 artifacts/*
 research/chest-CT-scan-data.zip
+mlruns/*
+*.jpg
+*.png
+*.jpeg
+*.ipynb_checkpoints/*
+*.gif
+*.pdf
