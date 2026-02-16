@@ -105,3 +105,85 @@ Or reproduce via DVC:
 ```
 dvc repro
 ```
+
+# Research Layer (MLflow Integration)
+
+The research/ directory contains notebook-based experimentation including:
+
+- Data exploration
+- Model experimentation
+- MLflow-based evaluation tracking
+
+This layer supports experimentation before promoting code to structured pipeline modules.
+
+# Docker Deployment
+
+Docker ensures consistent runtime environments across development and production.
+
+**Build image**
+```
+docker build -t chest-ct-classifier .
+```
+
+**Run container**
+```
+docker run -d -p 8000:8000 --name chest_app chest-ct-classifier
+```
+
+This guarantees environment stability and portability.
+
+# Jenkins CI/CD Integration
+
+This project includes a Jenkins pipeline to automate build and deployment.
+
+The Jenkinsfile defines a CI/CD workflow that:
+
+1. Pulls the latest code from GitHub
+2. Installs dependencies
+3. Builds a Docker image
+4. Stops the previous container (if running)
+5. Deploys the updated container automatically
+
+**CI/CD Flow**
+Git Push → Jenkins Trigger → Docker Build → Container Deployment
+
+**Deployment Logic (Simplified)**
+```
+docker build -t chest-ct-classifier:${BUILD_NUMBER} .
+docker stop chest_app || true
+docker rm chest_app || true
+docker run -d -p 5000:5000 --name chest_app chest-ct-classifier:${BUILD_NUMBER}
+```
+
+This enables automated delivery of model updates without manual intervention.
+
+The pipeline is structured to support future enhancements such as:
+
+- Automated testing
+- Model validation checks
+- Performance gating before deployment
+
+# Reproducibility with DVC
+
+DVC is used to:
+
+- Track dataset versions
+- Define pipeline stages
+- Maintain experiment reproducibility
+
+This ensures training consistency across environments.
+
+**Run:**
+```
+dvc status
+dvc repro
+```
+
+# GitHub Actions
+
+Basic CI workflow is defined in:
+
+```
+.github/workflows/main.yaml
+```
+This enables repository-level automation and validation.
