@@ -25,6 +25,7 @@ This project simulates a real-world ML deployment workflow.
 ---
 
 # 📂 Project Structure
+```
 Chest-Disease-Classification-from-Chest-CT-Scan-Image
 |
 ├── research/ # Experiment notebooks
@@ -61,3 +62,46 @@ Chest-Disease-Classification-from-Chest-CT-Scan-Image
 ├── jenkins/Jenkinsfile # Jenkins CI/CD pipeline
 ├── shell_script/ # Deployment automation scripts
 └── .github/workflows/ # GitHub Actions workflow
+```
+
+
+The system follows a layered architecture:
+
+Research → Modular Components → Pipeline Stages → Deployment → CI/CD
+
+---
+
+# 🧠 ML Pipeline Design
+
+The pipeline is broken into clear stages:
+
+1. Data Ingestion  
+2. Base Model Preparation  
+3. Model Training  
+4. Model Evaluation  
+
+Each stage is implemented independently inside `pipeline/` and calls reusable logic from `components/`.
+
+This design ensures:
+
+- Maintainability
+- Testability
+- Clear responsibility separation
+- Easy extension to multi-class classification
+
+---
+
+# 🏋️ Running the Training Pipeline
+
+Install dependencies:
+```
+pip install -r requirements.txt
+```
+Run the full pipeline:
+```
+python main.py
+```
+Or reproduce via DVC:
+```
+dvc repro
+```
