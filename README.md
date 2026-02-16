@@ -187,3 +187,40 @@ Basic CI workflow is defined in:
 .github/workflows/main.yaml
 ```
 This enables repository-level automation and validation.
+
+
+# What This Project Demonstrates
+
+- Structured ML engineering practices
+- Modular pipeline design
+- Research-to-production workflow
+- CI/CD automation for ML systems
+- Containerized deployment
+- Reproducible experimentation
+
+This repository represents an integrated approach to deep learning system development and deployment.
+
+# Future Enhancements
+
+- Multi-class classification support
+- Automated testing stage in Jenkins
+- Model performance validation before deployment
+- MLflow integration in production
+- Kubernetes-based scaling
+- Monitoring and logging integration
+
+# Tech Stack
+
+- Python
+- TensorFlow / Keras
+- Flask
+- DVC
+- MLflow
+- Docker
+- Jenkins
+- GitHub Actions
+
+
+#  Author
+## Asifuzzaman Lasker
+Applied AI Researcher | Medical Imaging AI | Deep Learning | MLOps | Vision-Language Models
