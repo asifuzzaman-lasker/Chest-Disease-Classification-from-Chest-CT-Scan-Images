@@ -24,7 +24,7 @@ This project simulates a real-world ML deployment workflow.
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 ```
 Chest-Disease-Classification-from-Chest-CT-Scan-Image
 |
@@ -71,7 +71,7 @@ Research → Modular Components → Pipeline Stages → Deployment → CI/CD
 
 ---
 
-# 🧠 ML Pipeline Design
+## ML Pipeline Design
 
 The pipeline is broken into clear stages:
 
@@ -91,7 +91,7 @@ This design ensures:
 
 ---
 
-# 🏋️ Running the Training Pipeline
+## Running the Training Pipeline
 
 Install dependencies:
 ```
@@ -106,7 +106,7 @@ Or reproduce via DVC:
 dvc repro
 ```
 
-# Research Layer (MLflow Integration)
+## Research Layer (MLflow Integration)
 
 The research/ directory contains notebook-based experimentation including:
 
@@ -116,7 +116,7 @@ The research/ directory contains notebook-based experimentation including:
 
 This layer supports experimentation before promoting code to structured pipeline modules.
 
-# Docker Deployment
+## Docker Deployment
 
 Docker ensures consistent runtime environments across development and production.
 
@@ -132,7 +132,7 @@ docker run -d -p 8000:8000 --name chest_app chest-ct-classifier
 
 This guarantees environment stability and portability.
 
-# Jenkins CI/CD Integration
+## Jenkins CI/CD Integration
 
 This project includes a Jenkins pipeline to automate build and deployment.
 
@@ -163,7 +163,7 @@ The pipeline is structured to support future enhancements such as:
 - Model validation checks
 - Performance gating before deployment
 
-# Reproducibility with DVC
+## Reproducibility with DVC
 
 DVC is used to:
 
@@ -179,7 +179,7 @@ dvc status
 dvc repro
 ```
 
-# GitHub Actions
+## GitHub Actions
 
 Basic CI workflow is defined in:
 
@@ -189,7 +189,7 @@ Basic CI workflow is defined in:
 This enables repository-level automation and validation.
 
 
-# What This Project Demonstrates
+## What This Project Demonstrates
 
 - Structured ML engineering practices
 - Modular pipeline design
@@ -200,7 +200,7 @@ This enables repository-level automation and validation.
 
 This repository represents an integrated approach to deep learning system development and deployment.
 
-# Future Enhancements
+## Future Enhancements
 
 - Multi-class classification support
 - Automated testing stage in Jenkins
@@ -209,7 +209,7 @@ This repository represents an integrated approach to deep learning system develo
 - Kubernetes-based scaling
 - Monitoring and logging integration
 
-# Tech Stack
+## Tech Stack
 
 - Python
 - TensorFlow / Keras
@@ -221,6 +221,6 @@ This repository represents an integrated approach to deep learning system develo
 - GitHub Actions
 
 
-#  Author
-## Asifuzzaman Lasker
+##  Author
+### Asifuzzaman Lasker
 Applied AI Researcher | Medical Imaging AI | Deep Learning | MLOps | Vision-Language Models
